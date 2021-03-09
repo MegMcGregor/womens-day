@@ -10,6 +10,20 @@ let womanDataArray = getWomanData()
     console.log(parsedResponse);
 })
 
+const applicationElement = document.querySelector("main");
+applicationElement.addEventListener("click", (event) => {
+    console.log("clicked on main", event)
+
+});
+
+applicationElement.addEventListener("click", event => {
+    if (event.target.id.startsWith("learnmore")){
+        const splitId = event.target.id.split("--");
+        console.log("what is splitId", splitId);
+        console.log("I want to learn more about id:", splitId[0])
+    }
+});
+
 
 const showWomenDetail = (detailObj) => {
     return `
@@ -33,7 +47,6 @@ let womanList = () => {
             }
         })
 }
-
 
 womanList();
 
